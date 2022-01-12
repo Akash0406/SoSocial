@@ -8,7 +8,7 @@ app.use(express.static('./assets'))
 
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
-app.set('layout extractStyle', true);
+app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
 
