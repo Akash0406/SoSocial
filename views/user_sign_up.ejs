@@ -1,1 +1,11 @@
-<h1>Sign Up</h1>
+<h1>Sign Up
+</h1>
+
+<form action="/users/create" method="post">
+    <input type="text" name="name" placeholder="your name" required>
+    <input type="email" name="email" placeholder="your email" required>
+
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <input type="password" name="confirmPassword" placeholder="confirm password" required>
+    <button type="submit">Sign Up</button>
+</form>
