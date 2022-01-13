@@ -2,6 +2,25 @@
 
 <h1>Codeial Page of
     <%= title %>
+
 </h1>
+
+<p> User :-
+    <%= user.name %>
+</p>
+
+<p>Email :-
+    <%= user.email %>
+</p>
+
+<p>
+    <%= user.createdAt %>
+</p>
+
+
+<button type="submit"> Signout </button>
+<form action="/users/sign-out" method="post">
+    <input type="submit" name="signOut" value="Sign Out">
+</form>
 
 <script></script>
