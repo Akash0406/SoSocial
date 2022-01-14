@@ -31,9 +31,13 @@ module.exports.signUp = function(req, res) {
 
 // render the signIn page
 module.exports.signIn = function(req, res) {
-    return res.render('user_sign_In', {
-        title: 'Sign In'
-    })
+    if (req.cookies.user_id) {
+        res.redirect('/users/profile');
+    } else {
+        return res.render('user_sign_In', {
+            title: 'Sign In'
+        })
+    }
 }
 
 
