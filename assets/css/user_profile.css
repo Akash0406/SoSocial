@@ -1,3 +1,6 @@
 body {
   background-color: #e6f0f0;
   height: 100vh; }
+  body #profile-image img {
+    height: 100px;
+    width: 100px; }

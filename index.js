@@ -8,7 +8,7 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
@@ -26,6 +26,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static('./assets'));
+
 // make the uploads path available to the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
@@ -42,23 +43,44 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // mongo store is used to store the session cookie in the db
+// app.use(session({
+//     name: 'codeial',
+//     // TODO change the secret before deployment in production mode
+//     secret: 'blahsomething',
+//     saveUninitialized: false,
+//     resave: false,
+//     cookie: {
+//         maxAge: (1000 * 60 * 100)
+//     },
+//     store: new MongoStore(
+//         {
+//             mongooseConnection: db,
+//             autoRemove: 'disabled'
+
+//         },
+//         function (err) {
+//             console.log(err || 'connect-mongodb setup ok');
+//         }
+//     )
+// }));
+
 app.use(session({
     name: 'codeial',
-    // TODO change the secret before deployment in production mode
+    // ToDo Change the secret before deployment in production mode  
     secret: 'blahsomething',
     saveUninitialized: false,
     resave: false,
     cookie: {
+        // secure: true,
         maxAge: (1000 * 60 * 100)
     },
-    store: new MongoStore(
-        {
-            mongooseConnection: db,
-            autoRemove: 'disabled'
-
-        },
+    store: MongoStore.create({
+        mongoUrl: db._connectionString,
+        // mongooseConnection: db,
+        autoRemove: 'disabled'
+    },
         function (err) {
-            console.log(err || 'connect-mongodb setup ok');
+            console.log(err || 'connect-mongo setup ok');
         }
     )
 }));

@@ -1,4 +1,9 @@
 body {
     background-color: rgb(230, 240, 240);
     height: 100vh;
+
+    #profile-image img {
+        height: 100px;
+        width: 100px;
+    }
 }
