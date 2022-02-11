@@ -1,0 +1,32 @@
+<header>
+    <nav class="navbar">
+        <div id="logo">
+            <img src="/images/logo.png" width="50" height="50" alt="logo">
+            <a id="brand" href="/">
+                Codeial
+            </a>
+        </div>
+
+
+        <ul id="tag-link">
+            <% if (locals.user){ %>
+                <li>
+                    <a href="/users/profile/<%= user.id %>">
+                        <%= user.name %>
+                    </a>
+                </li>
+                <li>
+                    <a href="/users/sign-out">Sign Out</a>
+                </li>
+                <% }else{ %>
+                    <li>
+                        <a href="/users/sign-in">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="/users/sign-up">Sign Up</a>
+                    </li>
+                    <% } %>
+        </ul>
+
+    </nav>
+</header>

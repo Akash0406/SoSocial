@@ -1,0 +1,17 @@
+body footer {
+  background-color: gray;
+  color: black;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  display: flex; }
+  body footer p {
+    padding: 20px; }
+  body footer li {
+    list-style: none;
+    margin: 5px 0; }
+    body footer li a {
+      text-decoration: none;
+      color: black; }
+    body footer li a:hover {
+      color: #2813e6; }
