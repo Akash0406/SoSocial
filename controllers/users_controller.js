@@ -5,7 +5,7 @@ const path = require('path');
 // let's keep it same as before
 module.exports.profile = function (req, res) {
 
-    User.findById(req.params.id, '-password', function (err, user) {
+    User.findById(req.params.id, '-password', function (err, user) {  // '-password' Add later to hide password
         return res.render('user_profile', {
             title: 'User Profile',
             profile_user: user

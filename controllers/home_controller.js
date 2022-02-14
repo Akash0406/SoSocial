@@ -9,7 +9,7 @@ module.exports.home = async function (req, res) {
         // populate the user of each post
         let posts = await Post.find({})
             .sort('-createdAt')
-            .populate('user', '-password')
+            .populate('user', '-password')  // '-password' Add later to hide password
             .populate({
                 path: 'comments',
                 populate: {

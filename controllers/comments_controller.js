@@ -18,7 +18,7 @@ module.exports.create = async function (req, res) {
 
             if (req.xhr) {
                 // Similar for comments to fetch the user's id!
-                comment = await comment.populate('user', 'name');
+                comment = await comment.populate('user', 'name');  // '-password' Add later to hide password
 
                 return res.status(200).json({
                     data: {

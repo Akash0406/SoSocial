@@ -5,7 +5,7 @@ module.exports.index = async function (req, res) {
 
     let posts = await Post.find({})
         .sort('-createdAt')
-        .populate('user', '-password')
+        .populate('user', '-password')  // '-password' Add later to hide password
         .populate({
             path: 'comments',
             populate: {
@@ -51,7 +51,6 @@ module.exports.destroy = async function (req, res) {
 
     } catch (err) {
         console.log("********", err);
-        // req.flash('error', err);
         return res.json(500, {
             message: "Internal Server Error"
         });
