@@ -11,6 +11,7 @@ passport.use(new googleStrategy({
 },
 
     function (accessToken, refreshToken, profile, done) {
+        console.log('This is accessToken', accessToken);
         User.findOne({ email: profile.emails[0].value }).exec(function (err, user) {
             if (err) {
                 console.log("Error in Google Strategy", err);
