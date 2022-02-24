@@ -10,9 +10,13 @@ exports.newComment = (comment) => {
         subject: "New Comment Publish!",
         html: '<h1> Your New Comment is Published </h1>'
     }, (err, info) => {
-        if (err) { console.log('Error in sending mail', err); console.log(info); return; }
+        if (err) {
+            console.log('Error in sending mail', err);
+            console.log(info);
+            return;
+        }
 
         console.log('Mail sent', info);
         return;
-    })
+    });
 }
