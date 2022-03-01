@@ -22,7 +22,10 @@ module.exports.toggleLike = async function (req, res) {
         })
 
         if (existingLike) {
-            likeable.likes.poll(existingLike._id);
+            // console.log('Likeable -> ', likeable);
+            // console.log('likes => ', likeable.likes);
+            // console.log(likeable);
+            likeable.likes.pull(existingLike._id);
             likeable.save();
 
             existingLike.remove();
@@ -33,7 +36,7 @@ module.exports.toggleLike = async function (req, res) {
                 likeable: req.query.id,
                 onModel: req.query.type
             });
-            likeable.likes.push(like._id);
+            likeable.likes.push(newLike._id);
             likeable.save();
         }
 
