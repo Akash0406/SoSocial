@@ -1,6 +1,6 @@
 
 
-# Codeial - Social Media Web Application
+# SoSocial - Social Media Web Application
 
 ## For Demo
 
