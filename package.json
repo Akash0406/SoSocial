@@ -1,5 +1,5 @@
 {
-  "name": "codeial",
+  "name": "codeial-v2",
   "version": "1.0.0",
   "description": "My all social media web application",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "keywords": [
     "social"
   ],
-  "author": "CodingNinjas",
+  "author": "Akash Kumar Singh",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
@@ -32,5 +32,14 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "redis": "^4.0.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akash0406/Codeial.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Akash0406/Codeial/issues"
+  },
+  "homepage": "https://github.com/Akash0406/Codeial#readme"
 }
