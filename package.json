@@ -1,7 +1,7 @@
 {
-  "name": "codeial-v2",
+  "name": "sosocial",
   "version": "1.0.0",
-  "description": "My all social media web application",
+  "description": "Social Media Web Application",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
